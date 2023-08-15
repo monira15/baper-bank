@@ -2,10 +2,17 @@
 //step-2
     const depositField = document.getElementById('deposit-field');
      
-    const depositAmount = depositField.value;
+    const NewDepositAmountString = depositField.value;
+    const NewDepositAmount=parseFloat(NewDepositAmountString);
+    
 //step-3
 const depositTotalElement = document.getElementById('deposit-total');
-const depositTotal = depositTotalElement.innerText;
-depositTotalElement.innerText=depositAmount;
+const previousDepositTotalString = depositTotalElement.innerText;
+const previousDepositTotal = parseFloat(previousDepositTotalString);
+const currentDepositTotal = previousDepositTotal+NewDepositAmount;
+
+depositTotalElement.innerText=currentDepositTotal;
+// setp-7
+depositField.value ='';
 
 })
